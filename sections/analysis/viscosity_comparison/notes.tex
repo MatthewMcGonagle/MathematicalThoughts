@@ -1,0 +1,37 @@
+\section{Viscosity Solutions and Comparison Principles}
+
+\subsection*{Remark on Sobolev Solutions}
+
+When we design weak solutions of a differential equation, we ask that the solutions retain some of
+the properties of the classical solutions. For example, Sobolev functions provide weak solutions
+to divergence form elliptic equations where we retain certain integral identities that exist for classical
+solutions. For Sobolev functions, the function itself and its derivatives are connected enough to still
+allow the application of integration by parts, when applicable. For example, a classical harmonic function
+\(u\) and a Sobolev harmonic function \(u\) both satisfy
+\begin{equation}
+0 = \int\limits_\Omega \langle \nabla u, \nabla \phi \rangle dV = -\int_\Omega u \Delta \phi dV, 
+\end{equation} 
+for any \(\phi \in C^2_0(\Omega)\).
+
+In particular, we can use the left hand equality applied to \(\phi = u \eta^2\) for some \(\eta\in C^1_0(\Omega)\).
+This can be used to establish interior integral estimates for \(\|\nabla u\|\); we see that we get
+\begin{equation}
+\int\limits_\Omega \|\nabla u\|^2 \eta^2 dV = - \int\limits_\Omega 2 u \eta \langle \nabla u, \nabla \eta \rangle dV. 
+\end{equation}
+Using Cauchy-Schwarz, we then have that 
+\begin{equation}
+\int\limits_\Omega \|\nabla u\|^2 \eta^2 dV \leq 4 \int\limits_\Omega u^2 \|\nabla \eta\|^2 dV.
+\end{equation}
+With a standard choice of \(eta\), this quickly gives us interior gradient estimates
+\begin{equation}
+\int\limits_{B_\rho(0)} \|\nabla u\|^2 dV \leq \frac{4}{\rho^2} \int\limits_{B_{2\rho}(0)} u^2 dV. 
+\end{equation}
+
+\subsection*{Viscosity Solutions}
+
+For elliptic equations, one way to interpret \textit{viscosity solutions} is that they allow us to
+retain a comparison principle. In fact, the comparison principle is baked into the definition; one can
+also use this viewpoint to keep track of the inequalities and their directions in the definitions of 
+viscosity solutions, sub-solutions, and super-solutions.
+
+So it is no surprise that techniques using viscosity solutions lean heavily on comparison principles.
