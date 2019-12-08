@@ -1,0 +1,25 @@
+\section{Energy Flux And Estimates for Elliptic Equations}
+
+Here I give my best interpretation of statements in \cite{CaffarelliVasseur2010} that state that the flux
+particular let us look at solutions to Laplace's equation \(\Delta u = 0\).
+
+Integrating \(u\Delta u\), we have that \(\int_{\partial B} u \nabla_{N} u dA - \int_B \|\nabla u\|^2 dx = 0\).
+So we can estimate the energy by the flux.
+
+However, we usually "smooth out" this flux using a cutoff function \(\phi \in C_0^1(B)\). That is, we
+instead integrate \(\phi^2 u\Delta u\), and use a Schwartz inequality to obtain energy estimates
+in the usual fashion.  
+
+So we get that 
+\begin{equation}
+\int_B \|\nabla u \|\phi^2 dx = - 2 \int_B u\phi \langle \nabla u, \nabla \phi \rangle dx. 
+\end{equation}
+Note that as \(\phi \to \chi_B\) in \(C^1_0(B)\), we get that the original flux equality; hence we may justify this
+as smoothing out the flux.
+
+Now, the main point is that the right hand side is a mixture of the functions values \(u\) and its derivatives \(\nabla u\). We 
+can then use a Cauchy Schwarz estimate in the usual fashion to obtain an estimate
+\begin{equation}
+\int_B \|\nabla u\|^2 \phi^2 dx \leq 4 \int_B u^2 \|\nabla \phi\|^2 dx.
+\end{equation}
+Then a typical choice of \(\phi\) will provide us with estimates for the energy of \(u\) in terms of \(\|u\|_{L^2}\).
