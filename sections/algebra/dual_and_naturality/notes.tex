@@ -16,14 +16,47 @@ For point (1), it is enough to simply observe that a basis \(\{\beta_i\}\) for a
 equivalent to a linear isomorphism \(C_\beta: \mathbb R^n \to V\). Therefore our study of dependence of basis
 leads us to consider such isomorphisms and to expand our consideration to more general maps.
 
-Point (2) is a little more involved. We consider two basis \(\{\alpha_i\}\) and \(\{\beta_i\}\). These are 
-equivalent to maps \(C_\alpha : \mathbb R^n \to V\) and \(C_\beta : \mathbb R^n \to V\). Now, these maps
-in combination with the map \(T : V \to V\) given by \(T(\alpha_i) = \beta_i\) form a commutative diagram.
+Point (2) is a little more involved. For this we should consider what it means to be "independent of basis." We
+can think of this as being that the transformation "looks the same" in every basis. What do we precisely mean
+by how a transformation "looks" for a given basis? We can think of this as how the transformation acts
+on the coordinates of the basis. 
 
-Now suppose that we have isomorphisms \(\phi_\alpha : V \to V^*\) and \(\phi_\beta : V \to V^*\) 
-where \(\phi_\alpha(\alpha_i) = \alpha_i^*\) and similarly for \(\phi_\beta\); note that these
-are the standard basis of \(V^*\) where, e.g., \(\alpha^*_i(\alpha_j) = \delta_{ij}\).
+For a one-form \(\omega \in V^*\), this is given by the pull-back by of the linear transformation
+\(C_\beta: \mathbb R^n  \to V\) that represents the basis \(\{\beta_i\}\). Therefore, we are lead to
+consider duality as a contravariant functor.  
 
-When we combine the above into a diagram involving \(\mathbb R\), two copies \(V\), and two copies of \(V^*\),
-we wish to find a map between the copies of \(V^*\) that gives us a commutative diagram. This happens
-exactly for the contravariant functor, i.e. we use the map \(T^*\) such that \(T^*(\omega)(v) = \omega(Tv)\).
+Now, if we don't consider naturality, and we consider any map \(T: V \to V^*\), then we are lead to the following
+diagram:
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes, row sep=3em, column sep=4em, minimum width=2em]
+{ \mathbb R^* & V^* \\
+  \mathbb R & V \\ 
+};
+\path[-stealth]
+    (m-1-2) edge node [above] {\(C_\beta^*\)} (m-1-1)
+    (m-2-2) edge node [right] {\(T\)} (m-1-2)
+    (m-2-1) edge node [below] {\(C_\beta\)} (m-2-2)
+            edge node [left] {\(S_\beta\)} (m-1-1);
+\end{tikzpicture}
+\end{figure}
+where \(S_\beta : \mathbb R \to \mathbb R^*\) is the map induced by \(C_\beta\), \(T\), and \(C_\beta^*\).
+
+Then what it means to be "independent of basis" is that this map \(T_\beta\) is actually indepent of \(\beta\).
+So we have that there is a map \(S = S_\beta\) for all bases \(\{\beta_i\}\); we have the diagram: 
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes, row sep=3em, column sep=4em, minimum width=2em]
+{ \mathbb R^* & V^* \\
+  \mathbb R & V \\ 
+};
+\path[-stealth]
+    (m-1-2) edge node [above] {\(C_\beta^*\)} (m-1-1)
+    (m-2-2) edge node [right] {\(T\)} (m-1-2)
+    (m-2-1) edge node [below] {\(C_\beta\)} (m-2-2)
+            edge node [left] {\(S\)} (m-1-1);
+\end{tikzpicture}
+\end{figure}
+
