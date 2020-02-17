@@ -1,0 +1,29 @@
+\section{Duality and Natural Transformations}
+
+Eilenberg and Maclane's classic paper introduces the concept of generalized naturality by discussing 
+the classic example of how an isomorphism between a vector space \(V\) and its dual \(V^*\) is dependent on
+the basis you choose to construct the isomorphism. They mention that considering the naturality of this 
+"...clearly involves a simultaneous consideration of all spaces \(L\) and all transformations \(\lambda\)
+connecting them."
+
+I would like to comment on two points that I think could use more discussion:
+\begin{enumerate}
+\item Why do we consider transformations when the original concept involves basis?
+\item Why must we consider the standard contravariant functor?
+\end{enumerate}
+
+For point (1), it is enough to simply observe that a basis \(\{\beta_i\}\) for an \(n\)-dimensional vector space \(V\) is
+equivalent to a linear isomorphism \(C_\beta: \mathbb R^n \to V\). Therefore our study of dependence of basis
+leads us to consider such isomorphisms and to expand our consideration to more general maps.
+
+Point (2) is a little more involved. We consider two basis \(\{\alpha_i\}\) and \(\{\beta_i\}\). These are 
+equivalent to maps \(C_\alpha : \mathbb R^n \to V\) and \(C_\beta : \mathbb R^n \to V\). Now, these maps
+in combination with the map \(T : V \to V\) given by \(T(\alpha_i) = \beta_i\) form a commutative diagram.
+
+Now suppose that we have isomorphisms \(\phi_\alpha : V \to V^*\) and \(\phi_\beta : V \to V^*\) 
+where \(\phi_\alpha(\alpha_i) = \alpha_i^*\) and similarly for \(\phi_\beta\); note that these
+are the standard basis of \(V^*\) where, e.g., \(\alpha^*_i(\alpha_j) = \delta_{ij}\).
+
+When we combine the above into a diagram involving \(\mathbb R\), two copies \(V\), and two copies of \(V^*\),
+we wish to find a map between the copies of \(V^*\) that gives us a commutative diagram. This happens
+exactly for the contravariant functor, i.e. we use the map \(T^*\) such that \(T^*(\omega)(v) = \omega(Tv)\).
