@@ -1,0 +1,38 @@
+\section{The Suprising Existence and Regularity of the Heat Equation}
+
+Here we briefly comment as to why the existence and regularity of the heat equation can be considered suprising.
+Thinking of the heat equation as an evolution in time, one may be lead to the intuition that the solution
+exists simply by "evolving" forward at each time \(t\); this is the intuition of short time existence for 
+first order ODE. However, here we show that the impact of the spatial derivative \(u_{xx}\) on regularity
+gives us a competing intuition for the solution not existing even under nice conditions. So not only is it
+suprising that the heat equation has smooth solutions under nice conditions, but that it has 
+solutions at all.
+
+Let us constider the simple case of the heat equation 
+\begin{equation}
+\begin{cases}
+u_t = u_{xx} & -1 < x < 1 \text{ and } t > 0, \\
+u(-1, t) = -2 & t > 0, \\
+u(1, t) = -2 & t > 0, \\
+u(x, 0) = x^2 (|x| - 3) & 0 \leq x \leq 1.
+\end{cases}
+\end{equation}
+Note that the boundary conditions are continuous. Furthermore, the first order boundardy condition 
+\(u_{xx}(\pm 1, 0) = 0 = u_t(\pm 1, t)\) is satisfied as well. Note also that \(\phi(x) = u(x, 0)\) is
+in \(C^{2, 1}\), in particular we have that \(\phi_{xx} = 6|x| - 6\) is Lipschitz. 
+
+What is suprising about this case is the heat equations regularity and existence in the interior at \(x = 0\)
+and \(t > 0\). Consider the first order approximation 
+\begin{align}
+u(x, 0 + h) & \approx u(x, 0) + u_t(x, 0)h, \\
+    & = u(x, 0) + u_xx(x, 0)h, \\
+    & = \phi(x) + 6(|x| - 1)h.
+\end{align}
+While \(\phi(x) \in C^{2, 1}([-1, 1])\), the last summand (when freezing \(h\)) \(6(|x| - 1)h\) is only in 
+\(C^{0, 1}([-1, 1])\). Therefore, it seems one iteration of the evolution forward in time destroys
+two derivatives of the spatial differentiability. It is therefore suprising that the solution \(u(x, t)\) should
+be defined or even \(C^2\) for any \(t > 0\). 
+
+If instead we had started with an initial condition \(u(x, 0) = \psi(x)\) with \(\psi \in C^k([-1, 1]\) for any
+\(k\), we would still run into the same problem. Look at \(m\) first order approximations where \(2m > k\), and
+we run into the same problem (actually we may run into the problem slightly before the \(m\)th iteration).
